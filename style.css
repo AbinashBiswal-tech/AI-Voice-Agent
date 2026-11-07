@@ -1,0 +1,293 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #070B20;
+    color: white;
+    min-height: 100vh;
+}
+
+.app-container {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 15%, #17145A 0%, transparent 35%),
+        linear-gradient(135deg, #080D2B, #101A49, #07102C);
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 30px;
+}
+
+.brand h2 {
+    color: #8272FF;
+    font-size: 21px;
+    letter-spacing: 1px;
+}
+
+.brand p {
+    color: #8294D8;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+button {
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 16px;
+    transition: 0.25s;
+}
+
+.history-btn {
+    background: #202B65;
+}
+
+.history-btn:hover {
+    background: #34459B;
+}
+
+.connection {
+    color: #43E5D4;
+    font-size: 11px;
+}
+
+/* Main content */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 85px);
+    padding: 0 28px 20px;
+}
+
+/* AI Orb */
+
+.assistant-area {
+    height: 185px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.orb {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2414F4;
+    box-shadow: 0 0 35px #2515FF80;
+    animation: pulse 2.5s infinite;
+}
+
+.orb-inner {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #08DDE8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px #08DDE8;
+}
+
+.orb-core {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: white;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 30px #2515FF80;
+    }
+    50% {
+        transform: scale(1.06);
+        box-shadow: 0 0 50px #08DDE880;
+    }
+}
+
+.assistant-area h4 {
+    color: #20E8F4;
+    font-size: 12px;
+}
+
+.assistant-area p {
+    color: #AABBEF;
+    font-size: 11px;
+}
+
+/* Chat area */
+
+.chat-area {
+    flex: 1;
+    min-height: 150px;
+    overflow-y: auto;
+    padding: 15px;
+    border: 1px solid #285CEB;
+    border-radius: 5px;
+    background: linear-gradient(
+        135deg,
+        #0635A8,
+        #1264D8,
+        #0877D5
+    );
+    box-shadow: inset 0 0 25px #001A6380;
+}
+
+.message {
+    margin-bottom: 14px;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.assistant-message {
+    color: #FFFFFF;
+}
+
+.user-message {
+    background: #142C75;
+    color: #DCEBFF;
+    text-align: right;
+    margin-left: auto;
+    max-width: 80%;
+}
+
+.message strong {
+    color: #8DF4FF;
+}
+
+/* Input area */
+
+.input-area {
+    display: flex;
+    gap: 8px;
+    padding-top: 12px;
+}
+
+#messageInput {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    background: #397BCB;
+    color: white;
+    border: 1px solid #609CEB;
+    outline: none;
+    border-radius: 5px;
+}
+
+#messageInput::placeholder {
+    color: #D0E2FF;
+}
+
+.send-btn {
+    background: #1688D8;
+}
+
+.send-btn:hover {
+    background: #27A8F5;
+}
+
+.speak-btn {
+    background: #A34BD7;
+}
+
+.speak-btn:hover {
+    background: #BD65ED;
+}
+
+/* History panel */
+
+.history-panel {
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    width: 300px;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: #101A43;
+    border: 1px solid #4559B5;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 10px 40px #0009;
+    z-index: 10;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.history-header h3 {
+    color: #8B83FF;
+}
+
+.history-header button {
+    background: #26366D;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+    .header {
+        padding: 15px;
+    }
+
+    .brand h2 {
+        font-size: 15px;
+    }
+
+    .connection {
+        display: none;
+    }
+
+    .main-content {
+        padding: 0 12px 15px;
+    }
+
+    .assistant-area {
+        height: 165px;
+    }
+
+    .input-area {
+        flex-wrap: wrap;
+    }
+
+    #messageInput {
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python AI Voice Agent - Fluid Dark Mode</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <header class="header">
+            <div class="brand">
+                <h2>✦ VOICE AI AGENT</h2>
+                <p>Powered by Gemini AI · Dark Mode Aesthetic</p>
+            </div>
+
+            <div class="header-actions">
+                <button id="historyBtn" class="history-btn">
+                    ☰ History
+                </button>
+                <span id="connectionStatus" class="connection">
+                    ● Gemini Connected
+                </span>
+            </div>
+        </header>
+
+        <main class="main-content">
+
+            <div class="assistant-area">
+                <div class="orb" id="aiOrb">
+                    <div class="orb-inner">
+                        <div class="orb-core"></div>
+                    </div>
+                </div>
+
+                <h4 id="statusText">● READY · Speak or Type Command</h4>
+                <p>Click Speak or type your prompt in the box below</p>
+            </div>
+
+            <section class="chat-area" id="chatArea">
+                <div class="message assistant-message">
+                    <strong>AI Agent:</strong>
+                    Hello! I am your Voice AI Assistant.
+                    You can speak to me or type your request below!
+                </div>
+            </section>
+
+            <div class="input-area">
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Type your message here..."
+                    autocomplete="off"
+                >
+
+                <button id="sendBtn" class="send-btn">
+                    Send
+                </button>
+
+                <button id="speakBtn" class="speak-btn">
+                    🎙 Speak
+                </button>
+            </div>
+
+        </main>
+
+        <aside id="historyPanel" class="history-panel hidden">
+            <div class="history-header">
+                <h3>Chat History</h3>
+                <button id="closeHistory">✕</button>
+            </div>
+            <div id="historyList">
+                <p>No saved conversations yet.</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
