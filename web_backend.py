@@ -44,7 +44,8 @@ class ChatRequest(BaseModel):
 
 
 BASE_DIR = Path(__file__).resolve().parent
-WEB_DIR = BASE_DIR / "web"
+WEB_DIR = BASE_DIR
+
 
 app.mount(
     "/static",
